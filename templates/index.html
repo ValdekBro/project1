@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Users</title>
+  </head>
+
+  <body>
+    <div role="main">
+        <h1>Menu</h1>
+        <form method="GET" action="user_form"><button type="submit">Add</button></form>
+        <form method="GET" action="user_log"><button type="submit">User log</button></form>
+        <!-- <form method="POST" action="/reset_id"> <button type="submit">Reset index</button></form> -->
+        <h1>Users</h1>
+        <table>
+          {% for user in users %}
+          <tr>
+            <td>  {{ user.id }}  </td>
+            <td>  {{ user.name }}  </td>
+            <td>  {{ user.password }}  </td>
+
+            <form method="POST" action="/delete">
+            <input type="hidden" name="del_id" value="{{ user.id }}">
+            <td> <button type="submit">Delete</button> </td>
+            </form>
+
+            <form method="GET" action="upd_user_form">
+            <input type="hidden" name="upd_id" value="{{ user.id }}">
+            <td> <button type="submit">Edit</button> </td>
+            </form>
+          </tr>
+          {% endfor %}
+        </table>
+    </div>
+  </body>
+</html>

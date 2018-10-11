@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Add user</title>
+  </head>
+
+  <body>
+      <form method="POST" action="/add">
+          <h2>Add user</h2>
+          <div>
+              <label >Name</label>
+              <input type="text" id="inputName" name="name" placeholder="Name" required autofocus>
+          </div>
+          <div>
+              <label >Password:</label>
+              <input type="password" name="password" id="password" placeholder="Password" required autofocus>
+          </div>
+          <button type="submit">Add</button>
+      </form>
+  </body>
+</html>
